@@ -1,0 +1,14 @@
+{
+  "name": "hexo-base-template",
+  "authors": [
+    "Raffaele Rasini <raffaele.rasini@gmail.com>"
+  ],
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components"
+  ],
+  "dependencies": {
+    "rapido": "*"
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "modules": [
+    "sass",
+    "uglify",
+    "sprite",
+    "livescript"
+  ],
+  "sass": {
+    "sourcemap": false,
+    "source": "source/sass/style.sass",
+    "target": "source/css/style.css"
+  },
+  "sprite": {
+    "source": "source/images/s/*.png",
+    "target": "source/images/sprites.png",
+    "stylesheet": "source/sass/_sprites.sass"
+  },
+  "js": {
+    "sources": {
+      "vendor": []
+    },
+    "target": {
+      "ie": "source/js/ie.min.js",
+      "vendor": "source/js/vendor.min.js",
+      "modernizr": "source/js/modernizr.min.js",
+      "app": false
+    }
+  },
+  "ls": {
+    "sources": ["source/ls/app.ls"],
+    "target": "source/js/app.min.js"
+  }
+}
+
+

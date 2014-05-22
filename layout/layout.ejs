@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width">
+
+  <%
+  var title = page.title;
+
+  if (is_archive()){
+    title = 'Archives';
+
+    if (is_month()){
+      title += ': ' + page.year + '/' + page.month;
+    } else if (is_year()){
+      title += ': ' + page.year;
+    }
+  } else if (is_category()){
+    title = 'Category: ' + page.category;
+  } else if (is_tag()){
+    title = 'Tag: ' + page.tag;
+  }
+  %>
+  <title><% if (title){ %><%= title %> | <% } %><%= config.title %></title>
+
+  <% if (theme.favicon){ %>
+    <link rel="icon" href="<%- theme.favicon %>">
+  <% } %>
+
+  <%- css('css/style') %>
+
+  <!--[if lt IE 9]><%- js('js/ie.min') %><![endif]-->
+  <%- js('js/modernizr.min') %>
+
+</head>
+
+
+<body>
+
+  <div class="w">
+
+    <%- partial('_partial/header') %>
+
+    <main>
+      <%- body %>
+    </main>
+
+    <%- partial('_partial/footer') %>
+  </div>
+
+  <%- js('js/vendor.min') %>
+  <%- js('js/app.min') %>
+
+</body>
+</html>

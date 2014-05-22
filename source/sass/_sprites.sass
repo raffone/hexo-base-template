@@ -1,0 +1,78 @@
+
+$cake-x: 0px
+$cake-y: 0px
+$cake-offset-x: 0px
+$cake-offset-y: 0px
+$cake-width: 64px
+$cake-height: 64px
+$cake-total-width: 64px
+$cake-total-height: 204px
+$cake-image: '../images/sprites.png'
+$cake: 0px 0px 0px 0px 64px 64px 64px 204px '../images/sprites.png'
+
+.s-cake
+  background-image: url(../images/sprites.png)
+  background-position: 0px 0px
+  width: 64px
+  height: 64px
+
+
+$croissant-x: 0px
+$croissant-y: 70px
+$croissant-offset-x: 0px
+$croissant-offset-y: -70px
+$croissant-width: 64px
+$croissant-height: 64px
+$croissant-total-width: 64px
+$croissant-total-height: 204px
+$croissant-image: '../images/sprites.png'
+$croissant: 0px 70px 0px -70px 64px 64px 64px 204px '../images/sprites.png'
+
+.s-croissant
+  background-image: url(../images/sprites.png)
+  background-position: 0px -70px
+  width: 64px
+  height: 64px
+
+
+$pie-x: 0px
+$pie-y: 140px
+$pie-offset-x: 0px
+$pie-offset-y: -140px
+$pie-width: 64px
+$pie-height: 64px
+$pie-total-width: 64px
+$pie-total-height: 204px
+$pie-image: '../images/sprites.png'
+$pie: 0px 140px 0px -140px 64px 64px 64px 204px '../images/sprites.png'
+
+.s-pie
+  background-image: url(../images/sprites.png)
+  background-position: 0px -140px
+  width: 64px
+  height: 64px
+
+
+
+@mixin sprite-width($sprite)
+  width: nth($sprite, 5)
+
+@mixin sprite-height($sprite)
+  height: nth($sprite, 6)
+
+@mixin sprite-position($sprite)
+  $sprite-offset-x: nth($sprite, 3)
+  $sprite-offset-y: nth($sprite, 4)
+  background-position: $sprite-offset-x  $sprite-offset-y
+
+@mixin sprite-image($sprite)
+  $sprite-image: nth($sprite, 9)
+  background-image: url(#{$sprite-image})
+
+@mixin sprite($sprite)
+  @include sprite-image($sprite)
+  @include sprite-position($sprite)
+  @include sprite-width($sprite)
+  @include sprite-height($sprite)
+
+
